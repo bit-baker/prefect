@@ -24,4 +24,4 @@ def marvel_ism():
     print(f"Iron Man: {im}\nCaptain America: {ca}\nSpiderman: {sm}")
 
 if __name__ == "main":
-    marvel_ism().serve(name="prefect-105")
+    marvel_ism.serve(name="prefect-105")
