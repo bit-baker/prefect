@@ -5,6 +5,7 @@ import random
 from prefect.blocks.system import DateTime
 from prefect.tasks import task_input_hash
 from prefect.artifacts import create_markdown_artifact
+import os
 
 data_time_block = DateTime.load("date-block")
 
@@ -59,10 +60,11 @@ def pipeline(lat=12, lon=21):
     logger.info(f"Block usage: {data_time_block}")
     data = fetch_weather( lat=lat, lon=lon)
     res = random_num_generator( data=data)
+    logger.info(f"Random num: {res}\n ENV: {os.getenv('dev')}")
     # if res < 0.0:
     #     raise Exception
     return save_data(content=data)
 
 
 if __name__ == "__main__":
-    pipeline.serve(name="prefect_103")
+    pipeline.serve(name="prefect_103") 
