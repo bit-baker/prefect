@@ -24,7 +24,4 @@ def marvel_ism():
     print(f"Iron Man: {im}\nCaptain America: {ca}\nSpiderman: {sm}")
 
 if __name__ == "main":
-    marvel_ism().deploy(
-        name="prefect-105-a",
-        work_pool_name="pool-1",
-    )
+    marvel_ism().serve(name="prefect-105")
